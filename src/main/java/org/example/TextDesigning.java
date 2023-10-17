@@ -2,6 +2,7 @@ package org.example;
 
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.kernel.color.Color;
+import com.itextpdf.kernel.color.DeviceRgb;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -32,6 +33,8 @@ public class TextDesigning {
         Text text5 = new Text("\nBold+Italic text").setFont(font).setBold().setItalic();
         Text text6 = new Text("\nNormal+Colored text").setFont(font).setFontColor(Color.GREEN);
         Text text7 = new Text("\nBold+Stroke colored text").setFont(font).setBold().setStrokeColor(Color.BLUE);
+//        Custom color
+        Text text8 = new Text("\nBold+Custom colored text").setFont(font).setBold().setFontColor(new DeviceRgb(253, 185, 149));
 
         Paragraph paragraph = new Paragraph()
                 .add(text1)
@@ -40,7 +43,8 @@ public class TextDesigning {
                 .add(text4)
                 .add(text5)
                 .add(text6)
-                .add(text7);
+                .add(text7)
+                .add(text8);
         document.add(paragraph);
 
         //  if want to add same style to multiple text
